@@ -1,0 +1,32 @@
+#titulo{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: rgb(130, 240, 240);
+    box-shadow: 2px  sol#0a0a0a;
+}
+h2{
+
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+#lista{
+
+    color: rgb(244, 246, 248);
+    background: linear-gradient(to bottom right, #040547, rgb(148, 205, 243));
+
+}
+
+#btneditar{
+    color: rgb(247, 247, 241);
+    background: linear-gradient(to bottom right, #464746, rgb(2, 142, 235));
+}
+
+#btneliminar{
+
+    color: rgb(247, 247, 241);
+    background: linear-gradient(to bottom right, #f1f5f1, rgb(108, 3, 122));
+
+}
