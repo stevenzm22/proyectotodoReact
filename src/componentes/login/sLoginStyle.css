@@ -1,0 +1,15 @@
+#contenedor{
+background-image: url(../login/imagen.jpg);
+height: 100vh;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+#parrafo{
+    font-size: 15px;
+}
+
+#form{
+    color: aliceblue;
+}

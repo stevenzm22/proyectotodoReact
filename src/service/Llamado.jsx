@@ -18,9 +18,9 @@ async function GetUser() {
     }
 }
 
-async function PostUser(tareas) {
+async function PostUser(Nombre,Apellido,Contrasena) {
     try {
-        const userData = {tareas};
+        const userData = {Nombre,Apellido,Contrasena};
 
         const response = await fetch("http://localhost:3000/Usuario", {
             method: 'POST',
@@ -41,9 +41,9 @@ async function PostUser(tareas) {
     }
 }
 
-async function UpdateUser(tareas, id) {
+async function UpdateUser(Nombre,Apellido,Contrasena, id) {
     try {
-        const userData = {tareas, id };
+        const userData = {Nombre,Apellido,Contrasena,id };
 
         const response = await fetch(`http://localhost:3000/Usuario/${id}`, {
             method: 'PUT',

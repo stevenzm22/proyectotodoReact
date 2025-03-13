@@ -10,12 +10,14 @@ function Home() {
     const [tareas,settareas]=useState()
 
     const [usuariosTareas,setusuarioTareas]=useState([])
+
+    const [inputeditar,setinputeditar]=useState()
    
     useEffect(() => {
    
         async  function recuperarDatos() {
             const datos= await Llamados.GetTarea()
-            console.log(datos);
+           
     
             setusuarioTareas(datos)
         }
@@ -36,23 +38,29 @@ function Home() {
     function agregar() {
 
             Llamados.PostTarea(tareas)
+            location.reload()
 
     }
 
     function Eliminar(id) {
       Llamados.DeleteTarea(id)
-        
+      location.reload()
     }
-    //traer los datos al input y editarlos
+    
+    function tareasInpunt (evento) {
+      setinputeditar(evento.target.value)
+    }
+
     function Editar(tareas,id) {
         Llamados.UpdateTarea()
+      
     }
 
 
 
   return (
 
-    <div>
+    <div id='contenedorMayor'>
         <div id='titulo'>
             <h1>Tareas por hacer</h1>
         </div>
@@ -67,12 +75,14 @@ function Home() {
 
         <div>
             
-        <h2>Lista de Tareas</h2>
+        <h2 id='h2'>Lista de Tareas</h2>
       <ul id='lista'>
+
         {usuariosTareas.map((tarea, index) => (
           <li key={index}>
             <strong>tareas:{tarea.tareas}</strong>
-
+            <br />
+           <input value={inputeditar} onChange={inputEditar} type="text" />
             <button onClick={e=>Editar(tarea.id)} id='btneditar'>editar</button> 
             <button onClick={e=>Eliminar(tarea.id)} id='btneliminar'>eliminar</button>
           </li>

@@ -1,3 +1,15 @@
+#contenedor{
+    
+    background: linear-gradient(to right, #024dfc, #f3f4f7);
+        height: 100vh; /* Ocupar toda la pantalla */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+      
+      
+}
+
+
 
 
 
@@ -8,4 +20,13 @@
  align-items: center;
  font-family: Arial, Helvetica, sans-serif;
  
+}
+
+#btn{
+ background-color: rgb(20, 20, 54);
+ color: aliceblue;
+}
+
+#parrafo{
+    font-size:  15px;
 }
