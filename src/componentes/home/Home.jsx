@@ -7,11 +7,11 @@ import "../home/Homes.css"
 
 function Home() {
 
-    const [tareas,settareas]=useState()
+    const [tareas,settareas]=useState("")
 
     const [usuariosTareas,setusuarioTareas]=useState([])
 
-    const [inputeditar,setinputeditar]=useState()
+    const [inputeditar,setinputeditar]=useState("")
    
     useEffect(() => {
    
@@ -36,26 +36,37 @@ function Home() {
     }
 
     function agregar() {
-
-            Llamados.PostTarea(tareas)
-            location.reload()
-
+      if (!tareas.trim()) {
+      alert("agregue una tarea")
+      } else {
+        Llamados.PostTarea(tareas)
+        location.reload()
+      }
+            
+     // settareas("")
+     
     }
 
     function Eliminar(id) {
-      Llamados.DeleteTarea(id)
-      location.reload()
+      if (Llamados.DeleteTarea(id)) {
+        alert("tarea eliminada")
+      }
+     location.reload()
     }
     
-    function tareasInpunt (evento) {
+    function inputEditar(evento) {
       setinputeditar(evento.target.value)
     }
 
-    function Editar(tareas,id) {
-        Llamados.UpdateTarea()
-      
+    function Editar(id) {
+      if (!inputeditar.trim()) {
+        alert("agregue una tarea")
+      } else {
+        Llamados.UpdateTarea(inputeditar, id)
+        location.reload()
+      }
+     
     }
-
 
 
   return (
@@ -67,10 +78,10 @@ function Home() {
 
         <div id='form'>
             <input value={tareas} onChange={tareasInpunt}  type="text" placeholder='agregarTareas'/>
+            <br />
             <button onClick={agregar} >Agregar</button>
 
-            {/*aqui ira el contador */  }
-            <div><p></p></div>
+           
         </div>
 
         <div>
@@ -79,15 +90,14 @@ function Home() {
       <ul id='lista'>
 
         {usuariosTareas.map((tarea, index) => (
-          <li key={index}>
-            <strong>tareas:{tarea.tareas}</strong>
+          <li key={index} id='li'>
+            <strong>{tarea.tareas}</strong>
             <br />
-           <input value={inputeditar} onChange={inputEditar} type="text" />
-            <button onClick={e=>Editar(tarea.id)} id='btneditar'>editar</button> 
-            <button onClick={e=>Eliminar(tarea.id)} id='btneliminar'>eliminar</button>
+            <input onChange={inputEditar} type="text"placeholder={tarea.tareas} />      <button onClick={e=>Editar(tarea.id)} id='btneditar'>editar</button>   <button onClick={e=>Eliminar(tarea.id)} id='btneliminar'>eliminar</button>
           </li>
         ))}
       </ul>
+      
         </div>
 
 

@@ -7,9 +7,9 @@ import Llamado from '../../service/Llamado'
 
 function Registro() {
 
-const [Nombre,setNombre]=useState()
-const [Apellido,setApellido]=useState()
-const [Contrasena,setContrasena]=useState()
+const [Nombre,setNombre]=useState("")
+const [Apellido,setApellido]=useState("")
+const [Contrasena,setContrasena]=useState("")
 
 function inputNombre(evento) {
     setNombre(evento.target.value)
@@ -22,14 +22,19 @@ function inputContrasena (evento) {
 }
 
 function registrar(evento) {
+  if (!Nombre.trim() || !Apellido.trim() || !Contrasena.trim()) {
+    alert("datos vacios")
+    
+  } else {
+    Llamado.PostUser(Nombre,Apellido,Contrasena)
+  }
   
-  Llamado.PostUser(Nombre,Apellido,Contrasena)
 }
 
   return (
 
-    <div id='contenedor'>
-        <div  id='form'>
+    <div id='contenedorr'>
+        <div  id='formm'>
 
         <label htmlFor="nombre">Nombre</label>
 

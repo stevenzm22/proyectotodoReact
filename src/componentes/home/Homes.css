@@ -1,6 +1,7 @@
 
 #contenedorMayor{
-    background-color: rgb(15, 6, 46);
+    background: linear-gradient(to bottom right, #9c9e9c, rgb(2, 42, 68));
+
     height: 100vh;
 }
 
@@ -23,18 +24,24 @@
 #lista{
 
     color: rgb(244, 246, 248);
-    background: linear-gradient(to bottom right, #040547, rgb(148, 205, 243));
-
+   
+   
 }
 
 #btneditar{
     color: rgb(247, 247, 241);
     background: linear-gradient(to bottom right, #464746, rgb(2, 142, 235));
+    border-radius: 6px;
 }
 
 #btneliminar{
 
     color: rgb(247, 247, 241);
     background: linear-gradient(to bottom right, #f1f5f1, rgb(108, 3, 122));
-
+    border-radius: 6px;
 }
+
+#li{
+    font-size: 20px;
+}
+

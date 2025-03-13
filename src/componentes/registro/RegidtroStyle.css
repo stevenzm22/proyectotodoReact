@@ -1,7 +1,10 @@
-#contenedor{
+#contenedorr{
     
-    background: linear-gradient(to right, #024dfc, #f3f4f7);
-        height: 100vh; /* Ocupar toda la pantalla */
+    background-image: url(../registro/fondo-naturaleza-acuarela-pintada-mano_23-2148941603.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+  /*  background: linear-gradient(to right, #024dfc, #f3f4f7); */
+        height: 100vh;  
    display: flex;
    justify-content: center;
    align-items: center;
@@ -14,7 +17,8 @@
 
 
 
-#form{
+#formm{
+    color: black;
  display: flex;
  flex-direction: column;
  align-items: center;
